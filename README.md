@@ -1,4 +1,5 @@
-1. Змінити .env
+1.Змінити .env
+
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
@@ -12,11 +13,13 @@ CACHE_STORE=file
 
 дані можете змінити під себе
 
-2. Запустити команди
+2.Запустити команди
+
 docker-compose build
 docker compose up -d
 
-3. Запустити сіди
+3.Запустити сіди
+
 зайти в контейнер
 docker exec -it task-manager bash
 запустити там команду
