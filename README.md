@@ -24,3 +24,9 @@ docker compose down
 
 По дефолту порт стоїть 8082, щоб не коніфлкувати із запущеними локальними веб-серверами
 Його можна змінити в docker-compose.yml
+
+Якщо будуть проблеми з кешування, зайдіть в контейнер
+docker exec -it task-manager bash
+та оновіть права доступу цим папкам
+chmod -R 775 /var/www/html/storage
+chmod -R 775 /var/www/html/bootstrap/cache
