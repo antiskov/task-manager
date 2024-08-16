@@ -14,9 +14,6 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // Add your middleware configuration here
         // You can append middleware to the web or api groups or globally
-        $middleware->api(append: [
-            \App\Http\Middleware\ApiKeyMiddleware::class,
-        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // Handle exception configuration
