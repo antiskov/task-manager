@@ -18,7 +18,7 @@ CACHE_STORE=file
 docker-compose build
 docker compose up -d
 
-4.Запустити сіди
+3.Запустити сіди
 
 зайти в контейнер
 docker exec -it task-manager bash
