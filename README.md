@@ -16,6 +16,12 @@ CACHE_STORE=file
 docker-compose build
 docker compose up -d
 
+3. Запустити сіди
+зайти в контейнер
+docker exec -it task-manager bash
+запустити там команду
+php artisan db:seed
+
 якщо треба вимкнути контейнери
 docker compose stop
 
