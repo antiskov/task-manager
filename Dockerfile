@@ -49,10 +49,11 @@ COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
 # Copy existing application directory contents
 COPY . /var/www/html
 
-# Copy existing application directory permissions
-COPY --chown=www-data:www-data . /var/www/html
+# Set permissions for storage and bootstrap/cache directories
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
+    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Change current user to www
+# Switch to www-data user
 USER www-data
 
 # Expose port 9000 and start php-fpm server

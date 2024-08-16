@@ -9,13 +9,8 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function getUserProductsBoughtBy30Days($userId)
+    public function getPopularProducts()
     {
-        return Product::whereHas('orders', function ($query) use ($userId) {
-            $query->where('user_id', $userId)
-                  ->where('orders.created_at', '>=', Carbon::now()->subDays(30));
-        })->with(['orders' => function ($query) use ($userId) {
-            $query->where('user_id', $userId);
-        }])->get();
+        return Product::getPopularProducts();
     }
 }
